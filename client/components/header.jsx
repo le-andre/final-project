@@ -1,19 +1,67 @@
 import React from 'react';
 
 export default function Header(props) {
+
+  //   return (
+  // <div className='nav-background'>
+  //   <div className='container-fluid'>
+  //     <div className='row'>
+  //       <div className='nav col-md-5'>
+  //         <a className="nav-link" href="#">Home</a>
+  //         <a className="nav-link" href="#">Leaderboard</a>
+  //         <a className="nav-link" href="#">How  to play</a>
+  //         <a className="nav-link" href="#">Chatroom</a>
+  //       </div>
+  //           <div className='nav-center nav col-md-2'>
+  //         <h3 className='center-nav-text'>NotWordle</h3>
+  //       </div>
+  //           <div className='nav-login nav col-md-5'>
+  //         <a className="nav-link" href="#">Login</a>
+  //       </div>
+  //     </div>
+  //   </div>
+  // </div>
+  //   );
   return (
-    <div className="container">
-      <nav className="navbar bg-dark fixed-top">
-        <div className="container-fluid">
-          <div className="navbar-nav">
-            <a className="nav-link" href="#">Home</a>
-            <a className="nav-link" href="#">Leaderboard</a>
-            <a className="nav-link" href="#">How  to play</a>
-            <a className="nav-link" href="#">Chatroom</a>
-            <a className="nav-link justify-content-end" href="#">Login</a>
-          </div>
+  <div className='container-fluid nav-background'>
+    <div className='row'>
+      <nav className='col-5 navbar navbar-expand-md navbar-light'>
+        <button
+        className='navbar-toggler'
+        type='button'
+        data-bs-toggle="collapse"
+        data-bs-target="#toggleMobileMenu"
+        aria-controls="toggleMobileMenu"
+        aria-expanded="false"
+        aria-lable="Toggle navigation"
+        >
+          <span className='navbar-toggler-icon'></span>
+        </button>
+        <div className='collapse navbar-collapse' id="toggleMobileMenu">
+          <ul className='navbar-nav'>
+            <li>
+              <a className="nav-link" href="#">Home</a>
+            </li>
+            <li>
+              <a className="nav-link" href="#">Leaderboard</a>
+            </li>
+            <li>
+                <a className="nav-link" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal"href="#">How to play</a>
+            </li>
+            <li>
+              <a className="nav-link" href="#">Chatroom</a>
+            </li>
+          </ul>
         </div>
+
       </nav>
+      <div className='col-2'>
+        <h3 className='center-nav-text'>NotWordle</h3>
+      </div>
+      <div className='col'>
+        <a className="user-nav nav-link text-end" href="#">Login</a>
+      </div>
     </div>
+  </div>
   );
 }

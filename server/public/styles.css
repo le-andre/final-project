@@ -2,11 +2,50 @@ html {
   background-color: rgb(36, 35, 35);
 }
 
-.navbar {
-  border-bottom: 2px solid rgb(112, 112, 112);
+.nav-background {
+  padding-top: 10px;
   background-color: rgb(36, 35, 35);
+  border-bottom: 2px solid rgb(112, 112, 112);
+  height: 67px;
 }
 
 .nav-link {
   color: rgb(109, 80, 237);
+}
+
+/*
+.nav-center {
+  color: white;
+  justify-content: center;
+  align-items: center;
+  font-size: 10px;
+}
+
+.nav-login {
+  justify-content: end;
+} */
+
+.center-nav-text {
+  color: white;
+  font-size: 20px;
+  padding-top: 15px;
+  margin-left: -25px;
+}
+
+.user-nav {
+  padding-top: 15px;
+}
+
+.modal-background {
+  background-color: #262627;
+  color: white;
+}
+
+.modal-example {
+  display: flex;
+  justify-content: center;
+}
+
+.modal-image {
+  padding-right: 14.5em;
 }

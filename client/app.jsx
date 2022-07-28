@@ -7,7 +7,8 @@ export default class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      route: parseRoute(window.location.hash)
+      route: parseRoute(window.location.hash),
+      user: null
     };
   }
 
@@ -28,7 +29,8 @@ export default class App extends React.Component {
   render() {
     return (
       <>
-      <Header />
+
+      <Header user={this.state.user}/>
       {this.renderPage()}
       </>
     );
