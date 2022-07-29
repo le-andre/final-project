@@ -2,13 +2,23 @@ import React from 'react';
 import Home from './pages/home';
 import { parseRoute } from './lib';
 import Header from './components/header';
+// import { boardDefault } from './components/game-components/words';
+import AppContext from './lib/app-context';
 
 export default class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       route: parseRoute(window.location.hash),
-      user: null
+      user: null,
+      board: [
+        ['', '', '', '', ''],
+        ['', '', '', '', ''],
+        ['', '', '', '', ''],
+        ['', '', '', '', ''],
+        ['', '', '', '', ''],
+        ['', '', '', '', '']
+      ]
     };
   }
 
@@ -19,11 +29,18 @@ export default class App extends React.Component {
   }
 
   renderPage() {
-    const { route } = this.state;
-    if (route.path === '') {
-      return <Home />;
-    }
+    const { route, board } = this.state;
+    const contextValue = { route, board };
+    // const [board, setBoard] = useState(boardDefault)
 
+    if (route.path === '') {
+      return (
+    <AppContext.Provider value={ contextValue }>
+      <Home />
+    </AppContext.Provider>
+
+      );
+    }
   }
 
   render() {

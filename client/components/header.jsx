@@ -2,26 +2,6 @@ import React from 'react';
 
 export default function Header(props) {
 
-  //   return (
-  // <div className='nav-background'>
-  //   <div className='container-fluid'>
-  //     <div className='row'>
-  //       <div className='nav col-md-5'>
-  //         <a className="nav-link" href="#">Home</a>
-  //         <a className="nav-link" href="#">Leaderboard</a>
-  //         <a className="nav-link" href="#">How  to play</a>
-  //         <a className="nav-link" href="#">Chatroom</a>
-  //       </div>
-  //           <div className='nav-center nav col-md-2'>
-  //         <h3 className='center-nav-text'>NotWordle</h3>
-  //       </div>
-  //           <div className='nav-login nav col-md-5'>
-  //         <a className="nav-link" href="#">Login</a>
-  //       </div>
-  //     </div>
-  //   </div>
-  // </div>
-  //   );
   return (
   <div className='container-fluid nav-background'>
     <div className='row'>
@@ -53,7 +33,6 @@ export default function Header(props) {
             </li>
           </ul>
         </div>
-
       </nav>
       <div className='col-2'>
         <h3 className='center-nav-text'>NotWordle</h3>
