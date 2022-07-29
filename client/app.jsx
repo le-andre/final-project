@@ -10,15 +10,8 @@ export default class App extends React.Component {
     super(props);
     this.state = {
       route: parseRoute(window.location.hash),
-      user: null,
-      board: [
-        ['', '', '', '', ''],
-        ['', '', '', '', ''],
-        ['', '', '', '', ''],
-        ['', '', '', '', ''],
-        ['', '', '', '', ''],
-        ['', '', '', '', '']
-      ]
+      user: null
+
     };
   }
 
@@ -29,13 +22,11 @@ export default class App extends React.Component {
   }
 
   renderPage() {
-    const { route, board } = this.state;
-    const contextValue = { route, board };
-    // const [board, setBoard] = useState(boardDefault)
+    const { route } = this.state;
 
     if (route.path === '') {
       return (
-    <AppContext.Provider value={ contextValue }>
+    <AppContext.Provider>
       <Home />
     </AppContext.Provider>
 
