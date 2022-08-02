@@ -1,11 +1,10 @@
 .keyboard-key {
-  height: 44px;
-  width: 28px;
+  height: 47px;
   margin: 1px;
   padding: 0;
   border: width 0;
   border-radius: 2px;
-  font-size: 15px;
+  font-size: 20px;
   font-weight: 600;
   text-align: center;
   color: #f2f2f2;
@@ -33,7 +32,7 @@
 }
 
 .keyboard-key[data-size="large"] {
-  width: 60px;
+  width: 70px;
 }
 
 .keyboard {
@@ -44,4 +43,25 @@
 
 .keyboard-row {
   display: flex;
+}
+
+li {
+  list-style: none;
+}
+
+.tile-row {
+  display: flex;
+  flex-direction: column;
+  width: "30px";
+  background-color: this.props.color;
+  height: "30px";
+  font-size: "x-large";
+  float: "left";
+  border: "1px solid white",;
+  margin-right: "4px";
+  margin-top: "4px";
+  padding-bottom: "4px";
+  color: "black";
+  border-radius: "5px";
+  vertical-align: "middle";
 }

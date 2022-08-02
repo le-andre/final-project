@@ -17,7 +17,8 @@ html {
   color: white;
   font-size: 20px;
   padding-top: 15px;
-  margin-left: -25px;
+  justify-content: center;
+  display: flex;
 }
 
 .user-nav {
@@ -47,6 +48,7 @@ html {
   height: 100vh;
   display: flex;
   color: white;
+  justify-content: center;
 }
 
 body {
@@ -169,4 +171,8 @@ nav h1 {
 
 #disabled {
   background-color: #3a393c;
+}
+
+.hidden {
+  opacity: 0;
 }

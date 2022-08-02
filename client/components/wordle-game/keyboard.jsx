@@ -6,7 +6,7 @@ export const topLetters = ['Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P'];
 export const middleLetters = ['A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L'];
 export const bottomLetters = ['Z', 'X', 'C', 'V', 'B', 'N', 'M'];
 export const LetterKeySet = ({ letters }) => {
-  return letters.map(letter => {
+  return letters.map((letter, index) => {
     return (
     <KeyboardKey key ={letter}>{letter}</KeyboardKey>
     );
@@ -23,8 +23,10 @@ export const Keyboard = () => {
         <LetterKeySet letters={middleLetters} />
       </div>
       <div className='keyboard-row'>
-        <EnterKey />
         <LetterKeySet letters={bottomLetters} />
+      </div>
+      <div className='keyboard-row'>
+        <EnterKey />
         <BackspaceKey />
       </div>
     </div>

@@ -8,7 +8,9 @@ export const CORRECT_STATE = 'correct';
 
 export const KeyboardKey = ({ state = 'pending', size = 'small', children }) => {
   return (
-  <button className='keyboard-key' data-state={state} data-size={size}>
+  <button className='keyboard-key' data-state={state} data-size={size} onClick={() => {
+    // console.log('firing');
+  }}>
     {children}
   </button>
   );
