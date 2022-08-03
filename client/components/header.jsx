@@ -13,7 +13,6 @@ export default function Header(props) {
         data-bs-target="#toggleMobileMenu"
         aria-controls="toggleMobileMenu"
         aria-expanded="false"
-        aria-lable="Toggle navigation"
         >
           <span className='navbar-toggler-icon'></span>
         </button>
@@ -35,7 +34,7 @@ export default function Header(props) {
         </div>
       </nav>
       <div className='col-2'>
-        <h3 className='center-nav-text'>NotWordle</h3>
+        <h3 className='center-nav-text'>HangMe</h3>
       </div>
       <div className='col'>
         <a className="user-nav nav-link text-end" href="#">Login</a>

@@ -9,13 +9,12 @@ export default class Home extends React.Component {
 
   render() {
     return (
-    <AppContext.Provider>
-     <HowToPlay />
-     <div className='app'>
 
-      <Hangman />
+     <div className='app'>
+     <Hangman />
+     <HowToPlay />
      </div>
-     </AppContext.Provider>
+
     );
   }
 }

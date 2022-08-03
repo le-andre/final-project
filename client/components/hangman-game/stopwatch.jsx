@@ -1,56 +1,46 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
-export default class StopWatch extends React.Component {
-  constructor(props) {
-    super(props);
-    this.timeTick = this.timeTick.bind(this);
-    this.timeReset = this.timeReset.bind(this);
-    this.timeInterval = this.timeInterval.bind(this);
-    this.state = {
-      running: false,
-      counter: 0,
-      status: ''
-    };
+function StopWatch({ setStopWatchStatus, setGameStatus }) {
+  const [time, setTime] = useState(120000);
+  const [timerOn, setTimerOn] = useState(false);
 
+  useEffect(() => {
+    let interval = null;
+    if (timerOn) {
+      interval = setInterval(() => {
+        setTime(prevTime => prevTime - 10);
+      }, 10);
+    } else if (!timerOn) {
+      clearInterval(interval);
+    }
+    return () => clearInterval(interval);
+  }, [timerOn]);
+
+  if (setGameStatus === true) {
+    setTimerOn(false);
   }
 
-  timeInterval() {
-    if (this.state.running === false) {
-      this.setState({ running: true, counter: 0, status: '' });
-      setInterval(this.timeTick, 1000);
-    }
-  }
-
-  timeTick() {
-    if (this.state.running === true) {
-      this.setState({ counter: this.state.counter + 1 });
-    }
-  }
-
-  timeReset() {
-    if (this.state.counter === 10) {
-      this.setState({ status: 'You Lose!', running: false, counter: '' });
-    } else {
-      this.setState({ status: '', running: false, counter: 0 });
-    }
-
-  }
-
-  render() {
-
-    let buttonClass = 'button hidden';
-    if (this.state.counter === 5) {
-      buttonClass = 'button';
-
-    }
-    return (
-      <div>
-        <span onClick={this.timeInterval}>{this.state.counter}</span>
-        <span onClick={this.timeReset}>{this.state.status}</span>
-        <div>
-          <button onClick={this.timeReset}className={buttonClass}>retry</button>
-        </div>
+  return (
+    <div className="Timers">
+      <h2>Guess the programming language!</h2>
+      <div id="display">
+        <span>{('0' + Math.floor((time / 60000) % 60)).slice(-2)}:</span>
+        <span>{('0' + Math.floor((time / 1000) % 60)).slice(-2)}</span>
       </div>
-    );
-  }
+      <div id="buttons">
+        {!timerOn && time === 120000 && (
+          <button onClick={() => setTimerOn(true) + setStopWatchStatus(true)}>Start</button>
+        )}
+        {timerOn && <button onClick={() => setTimerOn(false)}>Stop</button>}
+        {!timerOn && time < 120000 && (
+          <button onClick={() => setTime(120000) + setStopWatchStatus('') + window.location.reload(false) }>Reset</button>
+        )}
+        {timerOn && time === 0 && (
+          setTimerOn(false)
+        )}
+      </div>
+    </div>
+  );
 }
+
+export default StopWatch;
