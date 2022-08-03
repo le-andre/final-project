@@ -76,18 +76,13 @@ export default function Hangman() {
     );
   };
 
-  if (correctGuesses.length !== 0 && !maskedWord.join('') === word && gameStatus !== true) {
+  if (correctGuesses.length !== 0 && maskedWord.replaceAll(' ', '') === word && gameStatus !== true) {
     setGameStatus(true);
   }
 
-  // console.log('gameStatus:', gameStatus);
-  // console.log('correctGuesses:', correctGuesses);
-  // console.log('correctGuesses join:', correctGuesses.join(''));
-  // console.log('word:', word);
-  // console.log('maskedWordjoin:', maskedWord);
   return (
     <div className=''>
-      <StopWatch setStopWatchStatus={setStopWatchStatus} setGameStatus={setGameStatus}/>
+      <StopWatch setStopWatchStatus={setStopWatchStatus} gameStatus={gameStatus}/>
       <p id='word'>{!stopWatchStatus ? '' : maskedWord}</p>
       <p>{!gameStatus ? '' : 'You Win!' }</p>
       <p>{!gameStatus ? '' : submitScore()}</p>

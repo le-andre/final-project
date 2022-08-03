@@ -6,7 +6,3 @@ export default function parseRoute(hashRoute) {
   const params = new URLSearchParams(queryString);
   return { path, params };
 }
-
-/*
-
-*/

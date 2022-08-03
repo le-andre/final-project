@@ -28,7 +28,6 @@ export default class App extends React.Component {
     <AppContext.Provider value={props}>
       <Home />
     </AppContext.Provider>
-
       );
     }
   }
@@ -36,7 +35,6 @@ export default class App extends React.Component {
   render() {
     return (
       <>
-
       <Header user={this.state.user}/>
       {this.renderPage()}
       </>

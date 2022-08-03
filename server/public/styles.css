@@ -84,3 +84,12 @@ nav h1 {
 .hidden {
   opacity: 0;
 }
+
+#modal-titles {
+  padding-left: 155px;
+}
+
+#buttons {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
