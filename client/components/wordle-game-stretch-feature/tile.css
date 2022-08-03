@@ -1,0 +1,29 @@
+.tile {
+  width: 47px;
+  height: 47px;
+  margin: 2px;
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #f2f2f2;
+  font-size: 35px;
+  font-weight: 700;
+  line-height: 0;
+}
+
+.tile[data-state="pending"] {
+  background-color: #a3afbf;
+}
+
+.tile[data-state="incorrect"] {
+  background-color: #3e4247;
+}
+
+.tile[data-state="partially"] {
+  background-color: #f2b84b;
+}
+
+.tile[data-state="correct"] {
+  background-color: #86bf5e;
+}

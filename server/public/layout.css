@@ -1,0 +1,8 @@
+@media screen and (min-width: 768px) {
+  .center-nav-text {
+    color: white;
+    font-size: 20px;
+    padding-top: 15px;
+    padding-left: 25px;
+  }
+}

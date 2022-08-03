@@ -1,0 +1,67 @@
+.keyboard-key {
+  height: 47px;
+  margin: 1px;
+  padding: 0;
+  border: width 0;
+  border-radius: 2px;
+  font-size: 20px;
+  font-weight: 600;
+  text-align: center;
+  color: #f2f2f2;
+  background-color: #717d8b;
+}
+
+.keyboard-key[data-state="pending"] {
+  background-color: #a3afbf;
+}
+
+.keyboard-key[data-state="incorrect"] {
+  background-color: #3e4247;
+}
+
+.keyboard-key[data-state="partially"] {
+  background-color: #f2b84b;
+}
+
+.keyboard-key[data-state="correct"] {
+  background-color: #86bf5e;
+}
+
+.keyboard-key[data-size="small"] {
+  width: 47px;
+}
+
+.keyboard-key[data-size="large"] {
+  width: 70px;
+}
+
+.keyboard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.keyboard-row {
+  display: flex;
+}
+
+li {
+  list-style: none;
+}
+
+.tile-row {
+  display: flex;
+  flex-direction: column;
+  width: "30px";
+  background-color: this.props.color;
+  height: "30px";
+  font-size: "x-large";
+  float: "left";
+  border: "1px solid white",;
+  margin-right: "4px";
+  margin-top: "4px";
+  padding-bottom: "4px";
+  color: "black";
+  border-radius: "5px";
+  vertical-align: "middle";
+}

@@ -1,10 +1,21 @@
 import React from 'react';
-import HelloWorld from '../components/hello-world';
+import HowToPlay from '../components/how-to-play';
+import AppContext from '../lib/app-context';
+// import { Keyboard } from '../components/hangman-game/keyboard';
+// import RandomWord from '../components/hangman-game/words';
+import Hangman from '../components/hangman-game/hangman';
 
-export default function Home(props) {
-  return (
-    <div>
-      <HelloWorld />
-    </div>
-  );
+export default class Home extends React.Component {
+
+  render() {
+    return (
+
+     <div className='app'>
+     <Hangman />
+     <HowToPlay />
+     </div>
+
+    );
+  }
 }
+Home.contextType = AppContext;

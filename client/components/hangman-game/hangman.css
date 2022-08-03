@@ -1,0 +1,31 @@
+.hangman {
+  width: 80%;
+  margin-top: 50px;
+}
+
+.keyboard-key {
+  height: 47px;
+  margin: 1px;
+  padding: 0;
+  border: width 0;
+  border-radius: 2px;
+  font-size: 20px;
+  font-weight: 600;
+  text-align: center;
+  color: #f2f2f2;
+  background-color: #717d8b;
+}
+
+.keyboard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.keyboard-row {
+  display: flex;
+}
+
+.keyboard-key[data-size="small"] {
+  width: 47px;
+}

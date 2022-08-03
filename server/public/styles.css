@@ -1,0 +1,95 @@
+html {
+  background-color: rgb(36, 35, 35);
+}
+
+.nav-background {
+  padding-top: 10px;
+  background-color: rgb(36, 35, 35);
+  border-bottom: 2px solid rgb(112, 112, 112);
+  height: 67px;
+}
+
+.nav-link {
+  color: rgb(109, 80, 237);
+}
+
+.center-nav-text {
+  color: white;
+  font-size: 20px;
+  padding-top: 15px;
+  justify-content: center;
+  display: flex;
+}
+
+.user-nav {
+  padding-top: 15px;
+}
+
+.modal-background {
+  background-color: #262627;
+  color: white;
+}
+
+.modal-example {
+  display: flex;
+  justify-content: center;
+}
+
+.modal-image {
+  padding-right: 14.5em;
+}
+
+/* Game CSS */
+
+.app {
+  text-align: center;
+  background-color: #121212;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  color: white;
+  justify-content: center;
+}
+
+body {
+  padding: 0%;
+  margin: 0;
+}
+
+nav {
+  height: 60px;
+  width: 100%;
+  margin: 0;
+  display: grid;
+  place-items: center;
+}
+
+nav h1 {
+  margin: 0;
+  font-family: Helvetica, Arial, sans-serif;
+  color: white;
+  font-size: 45px;
+}
+
+.keyboard {
+  width: 700px;
+  height: 300px;
+  margin-top: 60px;
+}
+
+#disabled {
+  background-color: #3a393c;
+}
+
+.hidden {
+  opacity: 0;
+}
+
+#modal-titles {
+  padding-left: 155px;
+}
+
+#buttons {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
