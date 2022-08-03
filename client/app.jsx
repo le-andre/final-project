@@ -20,24 +20,26 @@ export default class App extends React.Component {
     });
   }
 
-  renderPage(props) {
+  renderPage() {
     const { route } = this.state;
 
     if (route.path === '') {
       return (
-    <AppContext.Provider value={props}>
       <Home />
-    </AppContext.Provider>
       );
     }
   }
 
   render() {
+    const user = this.state.user;
+    const contextValue = { user };
     return (
+      <AppContext.Provider value={contextValue}>
       <>
-      <Header user={this.state.user}/>
+      <Header user={user}/>
       {this.renderPage()}
       </>
+      </AppContext.Provider>
     );
   }
 }
