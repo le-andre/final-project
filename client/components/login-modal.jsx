@@ -8,8 +8,14 @@ export default class LoginModal extends React.Component {
     super(props);
     this.handleUsernameChange = this.handleUsernameChange.bind(this);
     this.handlePasswordChange = this.handlePasswordChange.bind(this);
+    this.handleModalDisplayChange = this.handleModalDisplayChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.state = { username: '', password: '' };
+    this.state = { username: '', password: '', signIn: true };
+  }
+
+  handleModalDisplayChange(event) {
+    this.setState({ signIn: !this.state.signIn });
+    // console.log(this.state.signIn);
   }
 
   handleUsernameChange(event) {
@@ -50,8 +56,8 @@ export default class LoginModal extends React.Component {
                 </label>
               </div>
               <div className="form-outline mb-4 text-center">
-                  <button type='submit' value="submit">Sign Up</button>
-                  <a className="user-nav nav-link" type="button">register</a>
+                  <button className='btn btn-primary' type='submit' value="submit">Sign Up</button>
+                  <a className="user-nav nav-link" onClick={this.handleModalDisplayChange} type="button">register</a>
               </div>
             </form>
             </div>

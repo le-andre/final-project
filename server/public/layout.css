@@ -5,4 +5,20 @@
     padding-top: 15px;
     padding-left: 25px;
   }
+
+  .login-link {
+    margin-left: 15em;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .login-link {
+    margin-left: 19em;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .login-link {
+    margin-left: 27em;
+  }
 }

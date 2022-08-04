@@ -37,7 +37,7 @@ export default function Header(props) {
         <h3 className='center-nav-text'>HangMe</h3>
       </div>
       <div className='col'>
-          <a className="user-nav nav-link text-end" type="button" data-bs-toggle="modal" data-bs-target="#loginModal" href="#">Login</a>
+          <a className="login-link user-nav nav-link text-end" type="button" data-bs-toggle="modal" data-bs-target="#loginModal" href="#">Login</a>
       </div>
     </div>
   </div>

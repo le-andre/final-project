@@ -11,7 +11,8 @@ export default class App extends React.Component {
     super(props);
     this.state = {
       route: parseRoute(window.location.hash),
-      user: null
+      user: null,
+      isLoading: true
     };
   }
 
@@ -19,6 +20,7 @@ export default class App extends React.Component {
     window.addEventListener('hashchange', () => {
       this.setState({ route: parseRoute(window.location.hash) });
     });
+
   }
 
   renderPage() {
@@ -38,7 +40,6 @@ export default class App extends React.Component {
       <AppContext.Provider value={contextValue}>
       <>
       <Header user={user}/>
-
       {this.renderPage()}
       <LoginModal user={user}/>
       </>
