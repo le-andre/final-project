@@ -17,7 +17,7 @@ export default function HowToPlay(props) {
               User will receive a score based off of how fast user figures out the word!
             </div>
             <div className="modal-body">
-              If you correctly guess the word, you can submit your score after.
+              If you correctly guess the word, you can submit your score after, if logged in.
             </div>
             </div>
           </div>

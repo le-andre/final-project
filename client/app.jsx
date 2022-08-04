@@ -3,6 +3,7 @@ import Home from './pages/home';
 import { parseRoute } from './lib';
 import Header from './components/header';
 import AppContext from './lib/app-context';
+import LoginModal from './components/login-modal';
 
 export default class App extends React.Component {
 
@@ -37,7 +38,9 @@ export default class App extends React.Component {
       <AppContext.Provider value={contextValue}>
       <>
       <Header user={user}/>
+
       {this.renderPage()}
+      <LoginModal user={user}/>
       </>
       </AppContext.Provider>
     );
