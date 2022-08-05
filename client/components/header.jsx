@@ -1,8 +1,11 @@
 import React from 'react';
+import AppContext from '../lib/app-context';
 
-export default function Header(props) {
+export default class Header extends React.Component {
 
-  return (
+  render() {
+
+    return (
   <div className='container-fluid nav-background'>
     <div className='row'>
       <nav className='col-5 navbar navbar-expand-md navbar-light'>
@@ -37,9 +40,12 @@ export default function Header(props) {
         <h3 className='center-nav-text'>HangMe</h3>
       </div>
       <div className='col'>
-          <a className="login-link user-nav nav-link text-end" type="button" data-bs-toggle="modal" data-bs-target="#loginModal" href="#">Login</a>
+          <a className="login-link user-nav nav-link text-end" type="button" data-bs-toggle="modal" data-bs-target="#loginModal" href>Login</a>
       </div>
     </div>
   </div>
-  );
+    );
+  }
 }
+
+Header.contextType = AppContext;

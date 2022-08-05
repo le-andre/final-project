@@ -3,10 +3,8 @@ const path = require('path');
 const express = require('express');
 const errorMiddleware = require('./error-middleware');
 const ClientError = require('./client-error');
-
 const app = express();
 const publicPath = path.join(__dirname, 'public');
-
 const jsonMiddleware = express.json();
 app.use(jsonMiddleware);
 const pg = require('pg');
@@ -57,10 +55,10 @@ app.post('/api/auth/sign-in', (req, res, next) => {
     throw new ClientError(401, 'invalid login');
   }
   const sql = `
-SELECT "userId", "hashedPassword"
-FROM "users"
-where "userName" = $1
-`;
+  SELECT "userId", "hashedPassword"
+  FROM "users"
+  where "userName" = $1
+  `;
   const value = [username];
   db.query(sql, value)
     .then(result => {
