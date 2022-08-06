@@ -5,14 +5,8 @@ export default class AuthForm extends React.Component {
   constructor(props) {
     super(props);
     this.handleChange = this.handleChange.bind(this);
-    this.handleModalDisplayChange = this.handleModalDisplayChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.state = { username: '', password: '' };
-  }
-
-  handleModalDisplayChange(event) {
-    this.setState({ signIn: !this.state.signIn });
-    // console.log(this.state.signIn);
   }
 
   handleChange(event) {
@@ -42,6 +36,11 @@ export default class AuthForm extends React.Component {
   }
 
   render() {
+    const { route } = this.props;
+    const buttonMessage = route === 'sign-up'
+      ? 'Sign-up'
+      : 'Log in';
+
     return (
       <form id='loginModal' onSubmit={this.handleSubmit}>
         <div className="form-outline mb-4 text-center">
@@ -55,6 +54,9 @@ export default class AuthForm extends React.Component {
             <p>Password</p>
             <input type="password" name="password" value={this.state.password} onChange={this.handleChange} />
           </label>
+          <div className="form-outline mb-4 text-center">
+            <button className='btn btn-primary' type='submit' href='#' onClick={() => { window.location.hash = 'sign-in'; }} value="submit">{buttonMessage}</button>
+          </div>
         </div>
       </form>
     );

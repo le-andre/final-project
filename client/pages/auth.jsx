@@ -4,23 +4,36 @@ import AuthForm from '../components/auth-form';
 import AppContext from '../lib/app-context';
 
 export default class AuthPage extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+  handleChange() {
+    const { route } = this.context;
+    if (route.path === 'sign-in') {
+      window.location.hash = 'sign-up';
+    } else {
+      window.location.hash = 'sign-in';
+    }
+  }
 
   render() {
     const { user, route, handleSignIn } = this.context;
 
     if (user) return <Redirect to="" />;
 
-    const welcomeMessage = route.path === 'sign-in'
+    const welcomeMessage = route.path === 'sign-up'
+      ? 'Register'
+      : 'Sign-in';
+
+    const linkMessage = route.path === 'sign-up'
       ? 'Sign-in'
       : 'Register';
 
-    const buttonMessage = route.path === 'sign-in'
-      ? 'Log in'
-      : 'Sign Up';
-
-    const linkMessage = route.path === 'sign-in'
-      ? 'Register'
-      : 'Sign-in';
+    const href = route.path === 'sign-up'
+      ? '#sign-in'
+      : '#sign-up';
 
     return (
         <AppContext.Provider value={AppContext}>
@@ -34,12 +47,10 @@ export default class AuthPage extends React.Component {
                 </div>
                 <div className="modal-body">
                 <AuthForm
-                  key={route.path}
-                  action={route.path}
+                  route={route.path}
                   onSignIn={handleSignIn} />
                   <div className="form-outline mb-4 text-center">
-                    <button className='btn btn-primary' type='submit' value="submit">{buttonMessage}</button>
-                    <a className="user-nav nav-link" onClick={this.userChange} type="button">{linkMessage}</a>
+                    <a className="user-nav nav-link" onClick={this.handleChange} href={href}>{linkMessage}</a>
                   </div>
                 </div>
               </div>

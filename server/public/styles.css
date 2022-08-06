@@ -93,3 +93,13 @@ nav h1 {
   padding-top: 10px;
   padding-bottom: 10px;
 }
+
+.sign-out {
+  padding-left: 10px;
+}
+
+.user-buttons {
+  display: flex;
+  justify-content: flex-end;
+  align-content: center;
+}

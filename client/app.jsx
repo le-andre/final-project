@@ -40,20 +40,30 @@ export default class App extends React.Component {
   }
 
   handleSignOut() {
-    window.localStorage.setItem('user-jwt');
+    window.localStorage.removeItem('user-jwt');
     this.setState({ user: null });
   }
 
   renderPage() {
-    const { path } = this.state.route;
-    const { user } = this.state;
-    if (path === '') {
+    const { user, route } = this.state;
+    const { handleSignIn, handleSignOut } = this;
+    const contextValue = { user, route, handleSignIn, handleSignOut };
+
+    if (route.path === '') {
       return (
-      <Home />
+        <AppContext.Provider value={contextValue}>
+          <Home />
+        </AppContext.Provider>
+
       );
     }
-    if (path === 'sign-in' || path === 'sign-up') {
-      return <Auth user={user}/>;
+    if (route.path === 'sign-in' || route.path === 'sign-up') {
+      return (
+        <AppContext.Provider value={contextValue}>
+          <Home />
+          <Auth user={user}/>
+        </AppContext.Provider>
+      );
     }
     return <NotFound />;
   }
