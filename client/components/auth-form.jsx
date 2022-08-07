@@ -55,7 +55,7 @@ export default class AuthForm extends React.Component {
             <input type="password" name="password" value={this.state.password} onChange={this.handleChange} />
           </label>
           <div className="form-outline mb-4 text-center">
-            <button className='btn btn-primary' type='submit' href='#' onClick={() => { window.location.hash = 'sign-in'; }} value="submit">{buttonMessage}</button>
+            <button className='btn btn-primary' type='submit' data-bs-dismiss="modal" aria-label="Close"href='#' onClick={() => { window.location.hash = 'sign-in'; }} value="submit">{buttonMessage}</button>
           </div>
         </div>
       </form>
