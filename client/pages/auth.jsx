@@ -50,7 +50,7 @@ export default class AuthPage extends React.Component {
                   route={route.path}
                   onSignIn={handleSignIn} />
                   <div className="form-outline mb-4 text-center">
-                    <a className="user-nav nav-link" onClick={this.handleChange} href={href}>{linkMessage}</a>
+                    <a className="user-nav nav-links" onClick={this.handleChange} href={href}>{linkMessage}</a>
                   </div>
                 </div>
               </div>
