@@ -5,9 +5,9 @@ export default function HowToPlay(props) {
     <div className=''>
       <div className="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div className="modal-dialog">
-          <div className="modal-background modal-content">
+          <div className="modal-content" id='modal-background'>
             <div className="modal-header">
-              <h5 className="modal-title" id="modal-titles">Game Explanation</h5>
+              <h5 className="modal-title text-center" id="modal-titles">Game Explanation</h5>
               <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div className="modal-body">

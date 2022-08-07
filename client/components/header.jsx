@@ -11,7 +11,7 @@ export default class Header extends React.Component {
       : user.username;
     const signOut = user === null
       ? ''
-      : 'sign-out bi bi-person-x-fill user-nav nav-link text-end';
+      : 'sign-out bi bi-person-x-fill user-nav nav-links text-end';
     return (
   <div className='container-fluid nav-background'>
     <div className='row'>
@@ -27,18 +27,18 @@ export default class Header extends React.Component {
         <span className='navbar-toggler-icon'></span>
         </button>
         <div className='collapse navbar-collapse' id="toggleMobileMenu">
-          <ul className='navbar-nav'>
-            <li>
-              <a className="nav-link" href="#">Home</a>
+          <ul className='navbar-nav nav-flex'>
+            <li className='nav-items'>
+              <a className="nav-links" href="#">Home</a>
             </li>
-            <li>
-              <a className="nav-link" href="#">Leaderboard</a>
+            <li className='nav-items'>
+              <a className="nav-links" href="#">Leaderboard</a>
             </li>
-            <li>
-                <a className="nav-link" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal"href="#">How to play</a>
+            <li className='nav-items'>
+                <a className="nav-links" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal"href="#">How to play</a>
             </li>
-            <li>
-              <a className="nav-link" href="#">Chatroom</a>
+            <li className='nav-items'>
+              <a className="nav-links" href="#">Chatroom</a>
             </li>
           </ul>
         </div>
@@ -47,8 +47,8 @@ export default class Header extends React.Component {
         <h3 className='center-nav-text'>HangMe</h3>
 
       </div>
-          <div className='user-buttons col text-end'>
-            <a className="login-link user-nav nav-link text-end" type="button" data-bs-toggle="modal" data-bs-target="#loginModal" onClick={() => { window.location.hash = 'sign-in'; }} href='#sign-in'>{loginMessage}</a>
+          <div className='user-buttons col text-end '>
+            <a className="login-link user-nav nav-links text-end" type="button" data-bs-toggle="modal" data-bs-target="#loginModal" onClick={() => { window.location.hash = 'sign-in'; }} href='#sign-in'>{loginMessage}</a>
             <i onClick={handleSignOut} className={signOut}></i>
       </div>
     </div>
