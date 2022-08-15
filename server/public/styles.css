@@ -9,8 +9,26 @@ html {
   height: 67px;
 }
 
-.nav-link {
+.nav-links {
   color: rgb(109, 80, 237);
+  text-decoration: none;
+}
+
+.nav-links:hover {
+  color: white;
+}
+
+.nav-flex {
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+.nav-items {
+  display: flex;
+  background-color: rgba(59, 57, 57, 0.876);
+  border-radius: 10%;
+  border-style: solid;
+  margin-top: 10px;
 }
 
 .center-nav-text {
@@ -25,7 +43,7 @@ html {
   padding-top: 15px;
 }
 
-.modal-background {
+#modal-background {
   background-color: #262627;
   color: white;
 }
@@ -86,10 +104,28 @@ nav h1 {
 }
 
 #modal-titles {
-  padding-left: 155px;
+  padding-left: 8em;
+}
+
+#modal-login-title {
+  padding-left: 10em;
 }
 
 #buttons {
   padding-top: 10px;
   padding-bottom: 10px;
+}
+
+.sign-out {
+  padding-left: 10px;
+}
+
+.user-buttons {
+  display: flex;
+  justify-content: flex-end;
+  align-content: center;
+}
+
+#login-button {
+  margin-top: 20px;
 }
